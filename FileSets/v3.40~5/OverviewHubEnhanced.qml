@@ -168,11 +168,16 @@ OverviewPage {
 	VBusItem { id: pvInverterL1Power1; bind: Utils.path(pvInverterPrefix1, "/Ac/L1/Power") }
 	VBusItem { id: pvInverterL2Power1; bind: Utils.path(pvInverterPrefix1, "/Ac/L2/Power") }
 	VBusItem { id: pvInverterL3Power1; bind: Utils.path(pvInverterPrefix1, "/Ac/L3/Power") }
-	VBusItem { id: pvInverterName1; bind: Utils.path(pvInverterPrefix1, "/CustomName") }
+	// VBusItem { id: pvInverterName1; bind: Utils.path(pvInverterPrefix1, "/CustomName") }
 	VBusItem { id: pvInverterPower2; bind: Utils.path(pvInverterPrefix2, "/Ac/Power") }
-	VBusItem { id: pvInverterName2; bind: Utils.path(pvInverterPrefix2, "/CustomName") }
+	// VBusItem { id: pvInverterName2; bind: Utils.path(pvInverterPrefix2, "/CustomName") }
 	VBusItem { id: pvInverterPower3; bind: Utils.path(pvInverterPrefix3, "/Ac/Power") }
-	VBusItem { id: pvInverterName3; bind: Utils.path(pvInverterPrefix3, "/CustomName") }
+	// VBusItem { id: pvInverterName3; bind: Utils.path(pvInverterPrefix3, "/CustomName") }
+
+//////// Enphase change
+	VBusItem { id: pvInverterName1; bind: Utils.path(pvInverterPrefix3, "/DeviceName") }
+	VBusItem { id: pvInverterName2; bind: Utils.path(pvInverterPrefix1, "/DeviceName") }
+	VBusItem { id: pvInverterName3; bind: Utils.path(pvInverterPrefix2, "/DeviceName") }
 
 //////// add to display AC input ignored
 	VBusItem { id: ignoreAcInput1; bind: Utils.path(inverterService, "/Ac/State/IgnoreAcIn1") }
@@ -917,7 +922,8 @@ OverviewPage {
 			TileText {
 				y: 63
 				text: pvInverterName2.valid ? pvInverterName2.value : "-"
-				visible: !showDcAndAcSolar && numberOfPvInverters >= 2
+				// visible: !showDcAndAcSolar && numberOfPvInverters >= 2
+				visible: !showDcAndAcSolar
 			},
 			TileText {
 				y: 77

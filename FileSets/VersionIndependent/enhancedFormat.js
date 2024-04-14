@@ -44,9 +44,9 @@ function formatValue (value, unit, precision)
 		if (precision != undefined)
 			return value.toFixed (precision) + " " + unit
 		else if (value >= 10000 || value <= -10000)
-			return (value/1000).toFixed (1) + " K" + unit
+			return (value/1000).toFixed (1) + " k" + unit
 		else
-			return (value/1000).toFixed (2) + " K" + unit
+			return (value/1000).toFixed (2) + " k" + unit
 	}
 }
 
